@@ -1,9 +1,22 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Express' });
-});
+  res.send('<h1> :)</h1>')
+})
 
-module.exports = router;
+router.get('/employee', (req, res, next) => {
+  res.send('Obteniendo empleados')
+})
+router.post('/employee', (req, res, next) => {
+  res.send('Creando empleados')
+})
+router.put('/employee', (req, res, next) => {
+  res.send('Actualizando empleado')
+})
+router.delete('/employee', (req, res, next) => {
+  res.send('Eliminado')
+})
+
+module.exports = router

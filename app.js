@@ -15,9 +15,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/employee',employeesRouter)
+app.use('/api',employeesRouter)
 app.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = app;

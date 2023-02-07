@@ -1,16 +1,20 @@
 const express = require('express')
 const router = express.Router()
 const pool = require('../db.js')
-const { getEmployees, createEmployees, deleteEmployees, updateEmployees } = require('../controllers/employees.controlers')
+const { getEmployees, getEmployee, createEmployee, deleteEmployee, updateEmployee } = require('../controllers/employees.controlers')
 
 
-router.get('/', getEmployees)
+router.get('/employees', getEmployees)
 
-router.post('/', createEmployees)
+router.get('/employees/:id', getEmployee)
 
-router.put('/', updateEmployees)
+router.post('/employees', createEmployee)
 
-router.delete('/', deleteEmployees)
+router.patch('/employees/:id', updateEmployee)
+
+router.delete('/employees', deleteEmployee)
+
+router.delete('/employees/:id', deleteEmployee)
 
 
 module.exports = router
